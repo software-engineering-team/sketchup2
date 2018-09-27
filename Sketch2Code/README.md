@@ -104,3 +104,26 @@ Sketch2Code.Web包含用于实现前端网站的代码。必须配置两个参�
 - storageUrl：Azure存储的URL。
 
 
+Sketch2Code 工作流程
+
+1.检测设计模式
+训练用于针对HTML手绘图案执行对象识别的自定义视觉模型用于将有意义的设计元素检测到图像中。
+2.理解手写文字
+每个检测到的元素都通过文本识别服务来提取手写内容。
+3.理解结构
+检测到的对象的信息及其在图像内的位置被输入到生成底层结构的算法中。
+4.构件HTML
+根据检测到的包含检测到的设计元素的布局生成有效的HTML。
+
+需求The Need
+User Interface Design process involves a lot a creativity that starts on a whiteboard where designers share ideas. Once a design is drawn, it is usually captured within a photograph and manually translated into some working HTML wireframe to play with in a web browser. This takes effort and delays the design process.
+用户界面设计过程涉及很多创意，从白板开始，设计师分享想法。绘制设计后，通常会将其捕获到照片中并手动转换为一些有效的HTML线框，以便在Web浏览器中播放。这需要付出努力并延迟设计过程。
+
+想法The Idea
+Computer Vision is a discipline inside artificial intelligence that gives an application the capability to see and understand what it is seeing. We can use this technology to build a system that understands what a designer has drawn on a whiteboard and can translate that understanding to HTML code. This way we can generate HTML wireframes directly from a hand-drawn image giving an instant working design implementation thus streamlining the design process.
+计算机视觉是人工智能中的一门学科，它使应用程序能够查看和理解它所看到的内容。我们可以使用这项技术构建一个系统，该系统可以了解设计师在白板上绘制的内容，并可以将这种理解转化为HTML代码。通过这种方式，我们可以直接从手绘图像生成HTML线框，从而实现即时工作设计实现，从而简化设计流程。
+
+
+解决方案The Solution
+The model behind this service has been trained with millions of images and enables object detection for a wide range of types of objects. In this case, we need to build a custom model and train it with images of hand-drawn design elements like a textbox, button or combobox. The Custom Vision Service gives us with the capability to train custom models and perform object detection for them. Once we can identify HTML objects we use the text recognition functionality present in the Computer Vision Service to extract hand-written text present in the design. By combining these two pieces of information, we can generate the HTML snippets of the different elements in the design. We then can infer the layout of the design from the position of the identified elements and generate the final HTML code accordingly.
+该服务背后的模型已经过数百万个图像的训练，可以对各种类型的物体进行物体检测。在这种情况下，我们需要构建一个自定义模型，并使用手绘设计元素的图像进行训练，如文本框，按钮或组合框。Custom Vision Service使我们能够训练自定义模型并为其执行对象检测。一旦我们能够识别HTML对象，我们就可以使用计算机视觉服务中提供的文本识别功能来提取设计中出现的手写文本。通过组合这两个信息，我们可以生成设计中不同元素的HTML片段。然后，我们可以从已识别元素的位置推断出设计的布局，并相应地生成最终的HTML代码。
