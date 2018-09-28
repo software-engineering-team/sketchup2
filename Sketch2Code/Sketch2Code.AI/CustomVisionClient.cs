@@ -37,7 +37,7 @@ namespace Sketch2Code.AI
         
         protected async Task<Project> GetProjectAsync(string projectName)
         {
-            if (String.IsNullOrWhiteSpace(projectName)) throw new ArgumentNullException("projectName");
+            if (String.IsNullOrWhiteSpace(projectName)) throw new ArgumentNullException("projectName");  //抛出
             var projects = await this._trainingApi.GetProjectsAsync();
 
             return projects.SingleOrDefault(p => p.Name.Equals(projectName, StringComparison.InvariantCultureIgnoreCase));
@@ -45,12 +45,12 @@ namespace Sketch2Code.AI
 
         public virtual void Initialize()
         {
-            if (String.IsNullOrWhiteSpace(_projectName)) throw new ArgumentNullException("projectName");
+            if (String.IsNullOrWhiteSpace(_projectName)) throw new ArgumentNullException("projectName");  //抛出
             var projects = this._trainingApi.GetProjects();
 
             this._project = projects.SingleOrDefault(p => p.Name.Equals(_projectName, StringComparison.InvariantCultureIgnoreCase));
 
-            if (_project == null) throw new InvalidOperationException($"CustomVision client failed to initialize. ({_projectName} Not Found.)");
+            if (_project == null) throw new InvalidOperationException($"CustomVision client failed to initialize. ({_projectName} Not Found.)");   //抛出
 
 
             SetDefaultIteration(ConfigurationManager.AppSettings["ObjectDetectionIterationName"]);
@@ -58,9 +58,9 @@ namespace Sketch2Code.AI
 
         protected async Task<IList<Iteration>> GetIterations(string projectName)
         {
-            if (String.IsNullOrWhiteSpace(projectName)) throw new ArgumentNullException("projectName");
+            if (String.IsNullOrWhiteSpace(projectName)) throw new ArgumentNullException("projectName");  //抛出
 
-            var prj = await this.GetProjectAsync(projectName);
+            var prj = await this.GetProjectAsync(projectName);    //同步锁
 
             var iterations = await this._trainingApi.GetIterationsAsync(prj.Id);
 
@@ -71,26 +71,26 @@ namespace Sketch2Code.AI
         {
             if (_project == null) throw new InvalidOperationException("Project is null");
 
-            var iterations = await this._trainingApi.GetIterationsAsync(_project.Id);
+            var iterations = await this._trainingApi.GetIterationsAsync(_project.Id);    //同步锁
 
             var iteration = iterations.SingleOrDefault(i=>i.Name == iterationName);
 
-            if (iteration == null) throw new InvalidOperationException($"Iteration {iterationName} not found");
+            if (iteration == null) throw new InvalidOperationException($"Iteration {iterationName} not found");   //抛出
 
             iteration.IsDefault = true;
 
-            await _trainingApi.UpdateIterationAsync(_project.Id, iteration.Id, iteration);
+            await _trainingApi.UpdateIterationAsync(_project.Id, iteration.Id, iteration);   //同步锁
         }
 
         public virtual void SetDefaultIteration(string iterationName)
         {
-            if (_project == null) throw new InvalidOperationException("Project is null");
+            if (_project == null) throw new InvalidOperationException("Project is null");    //抛出
 
             var iterations = this._trainingApi.GetIterations(_project.Id);
 
             var iteration = iterations.SingleOrDefault(i => i.Name == iterationName);
 
-            if (iteration == null) throw new InvalidOperationException($"Iteration {iterationName} not found");
+            if (iteration == null) throw new InvalidOperationException($"Iteration {iterationName} not found");    //抛出
 
             iteration.IsDefault = true;
 
