@@ -62,7 +62,7 @@ namespace Sketch2Code.AI
             }
             catch (ClientException ex)
             {
-                list.Add($"Text prediction failed: {ex.Error.Message}. Id: {ex.Error.Code}.");
+                list.Add($"Text prediction failed: {ex.Error.Message}. Id: {ex.Error.Code}.");  //异常处理
             }
             return list;
         }
@@ -93,7 +93,7 @@ namespace Sketch2Code.AI
             }
             catch (ClientException ex)
             {
-                return null;
+                return null;   //异常处理
             }
         }
     }
