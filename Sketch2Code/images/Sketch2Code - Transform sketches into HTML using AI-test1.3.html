@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://sketch2code.azurewebsites.net/details/27ddb99e-2596-45e9-9752-ee237e3733dd -->
+<html lang="en" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta property="og:url" content="http://sketch2code.azurewebsites.net/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Transform sketches into HTML using AI">
+    <meta property="og:description" content="Take a handwritten UI design and transform it into a valid HTML code">
+    <meta property="og:image" content="http://sketch2code.azurewebsites.net/content/img/img_spareMobile.svg">
+    <meta name="description" content="Transform sketches into HTML using AI">
+    <link rel="icon" type="image/x-icon" href="https://sketch2code.azurewebsites.net/content/img/favicon.ico">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketch2Code - Transform sketches into HTML using AI</title>
+    <link rel="stylesheet" href="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/css">
+    <link rel="stylesheet" href="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/bootstrap.min(1).css">
+    <script type="text/javascript" async="" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/analytics.js.下载"></script><script type="text/javascript" async="" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/insight.min.js.下载"></script><script async="" src="https://static.ads-twitter.com/uwt.js"></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/es6-promise.auto.js.下载"></script>
+    <script src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/modernizr-2.6.2.js.下载"></script>
+    <link href="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/main.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/bootstrap.min.js.下载"></script>
+    <script src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/jquery-3.0.0.js.下载"></script>
+    <script src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/bootstrap.js.下载"></script>
+    <link href="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/cropper.min.css" rel="stylesheet" type="text/css">
+    <script src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/cropper.min.js.下载"></script>
+    <script type="text/javascript">
+        var appInsights = window.appInsights || function (config) {
+            function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } }
+            var t = { config: config }, u = document, e = window, o = 'script', s = u.createElement(o), i, f; for (s.src = config.url || '//az416426.vo.msecnd.net/scripts/a/ai.0.js', u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Ajax']; i.length;)r('track' + i.pop()); return r('setAuthenticatedUserContext'), r('clearAuthenticatedUserContext'), config.disableExceptionTracking || (i = 'onerror', r('_' + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o), s }), t
+        }({
+            instrumentationKey: '0bf8d80a-82a1-4966-947c-9d7b15bf42d8'
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script><script src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/ai.0.js.下载"></script>
+
+<script async="" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/t.js.下载"></script></head>
+<body>
+
+    <div id="disclaimer" class="disclaimer text-white hide" aria-hidden="true">
+        This site uses cookies for analytics, personalized content and ads. By continuing to browse this site, you agree to this use.
+        <a class="learn-more" href="https://privacy.microsoft.com/en-US/">Learn more</a>
+        <button class="close" id="cookie-consent" aria-label="Close">X</button>
+    </div>
+
+    <div id="header" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <a href="https://www.microsoft.com/en-us/">
+                    <img alt="Microsoft Logo" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/ms_logo.png">
+                </a>
+
+                <span class="hidden-responsive">&nbsp;|</span>
+                <a href="https://www.microsoft.com/en-us/ai/default.aspx" class="hidden-responsive">
+                    <img alt="Microsoft AI Logo" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/ms_ai_logo.jpg">
+                </a>
+
+            </div>
+
+            <div class="col text-right">
+                <a target="_blank" href="https://www.ailab.microsoft.com/experiments/30c61484-d081-4072-99d6-e132d362b99d">
+                    Learn more at AI Lab
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid hidden-responsive">
+        <div id="steps" class="row justify-content-center">
+            <div class="col">
+                <span id="step1" class="dot">1</span>
+                <span id="step1txt" class="header-txt">UPLOAD DESIGN</span>
+            </div>
+
+            <div class="col">
+                <span id="step2" class="dot">2</span>
+                <span id="step2txt" class="header-txt">SKETCH2CODE IS AT WORK!</span>
+            </div>
+
+            <div class="col">
+
+                <span id="step3" class="dot active">3</span>
+
+                <span id="step3txt" class="header-txt active">DOWNLOAD YOUR HTML</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="title">
+            <h1>
+                <span class="main">Sketch</span>
+                <span class="number">2</span>
+                <span class="main">Code</span>
+            </h1>
+
+            <h2 class="subtitle">Transform any hands-drawn design into a HTML code with AI.</h2>
+            
+        </div>
+
+        
+
+
+
+<div class="container-fluid">
+    <div class="row detailsPage_row">
+
+        <div class="col">
+            <h3 class="subtitle3 text-top text-center">SKETCH</h3>
+        </div>
+
+        <div class="col">
+            <h3 class="subtitle3 text-top text-center">PREDICTED</h3>
+        </div>
+
+        <div class="col">
+            <h3 class="subtitle3 text-top text-center">HTML</h3>
+        </div>
+
+
+    </div>
+    <div class="row">
+
+        <div class="col  bg-white align-content-center center-vt mr-2 ml-2">
+            <a href="https://sketch2code.azurewebsites.net/app/file?container=27ddb99e-2596-45e9-9752-ee237e3733dd&amp;fileName=original.png" target="_blank">
+                <img alt="Your sketch" class="img-fluid" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/original.png">
+            </a>
+
+        </div>
+        <div class="col  bg-white align-content-center center-vt ml-2 mr-2">
+            <a href="https://sketch2code.azurewebsites.net/app/file?container=27ddb99e-2596-45e9-9752-ee237e3733dd&amp;fileName=predicted.png" target="_blank">
+                <img alt="Your predicted skecth" class="img-fluid" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/predicted.png">
+            </a>
+        </div>
+        <div class="col  bg-white align-content-center center-vt ml-2 mr-2">
+            <a href="https://sketch2code.azurewebsites.net/app/file?container=27ddb99e-2596-45e9-9752-ee237e3733dd&amp;fileName=html.png" target="_blank">
+                <img alt="Your html code" class="img-fluid" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/html.png">
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+<div class="container-float pt-5 mb-5">
+    <div class="row justify-content-center">
+
+
+        <h4 id="text-predicted" class="subtitle3 d-flex justify-content-center">PREDICTED OBJECT DETAILS</h4>
+    </div>
+    <div id="predictedObjects" class="row">
+            <div class="col-6 col-md-3 flex-row justify-content-center d-flex" style="padding-top:20px;">
+                <div class="card">
+                    <img alt="Button" class="img-thumbnail card-img-top w-100 d-block" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/slice_Button_0.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Type: Button</h5>
+                                <h5 class="card-title">Text: 1 5 8</h5>
+                        <h5 class="card-title">Probability: 48.51 %</h5>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 col-md-3 flex-row justify-content-center d-flex" style="padding-top:20px;">
+                <div class="card">
+                    <img alt="CheckBox" class="img-thumbnail card-img-top w-100 d-block" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/slice_CheckBox_1.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Type: CheckBox</h5>
+                                <h5 class="card-title">Text: FACES Is the BE</h5>
+                        <h5 class="card-title">Probability: 45.2 %</h5>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 col-md-3 flex-row justify-content-center d-flex" style="padding-top:20px;">
+                <div class="card">
+                    <img alt="Label" class="img-thumbnail card-img-top w-100 d-block" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/slice_Label_2.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Type: Label</h5>
+                                <h5 class="card-title">Text: Is the BE</h5>
+                        <h5 class="card-title">Probability: 31.72 %</h5>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 col-md-3 flex-row justify-content-center d-flex" style="padding-top:20px;">
+                <div class="card">
+                    <img alt="Label" class="img-thumbnail card-img-top w-100 d-block" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/slice_Label_3.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Type: Label</h5>
+                                <h5 class="card-title">Text: IF ) 36</h5>
+                        <h5 class="card-title">Probability: 64.82 %</h5>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 col-md-3 flex-row justify-content-center d-flex" style="padding-top:20px;">
+                <div class="card">
+                    <img alt="Label" class="img-thumbnail card-img-top w-100 d-block" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/slice_Label_4.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Type: Label</h5>
+                                <h5 class="card-title">Text: 4 8</h5>
+                        <h5 class="card-title">Probability: 87.33 %</h5>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 col-md-3 flex-row justify-content-center d-flex" style="padding-top:20px;">
+                <div class="card">
+                    <img alt="Label" class="img-thumbnail card-img-top w-100 d-block" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/slice_Label_5.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Type: Label</h5>
+                                <h5 class="card-title">Text: HE By</h5>
+                        <h5 class="card-title">Probability: 81.82 %</h5>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 col-md-3 flex-row justify-content-center d-flex" style="padding-top:20px;">
+                <div class="card">
+                    <img alt="Table" class="img-thumbnail card-img-top w-100 d-block" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/slice_Table_6.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Type: Table</h5>
+                                <h5 class="card-title">Text: 1 5 8 FACES Is the BE</h5>
+                        <h5 class="card-title">Probability: 33.23 %</h5>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 col-md-3 flex-row justify-content-center d-flex" style="padding-top:20px;">
+                <div class="card">
+                    <img alt="TextBox" class="img-thumbnail card-img-top w-100 d-block" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/slice_TextBox_7.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Type: TextBox</h5>
+                        <h5 class="card-title">Probability: 77.05 %</h5>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 col-md-3 flex-row justify-content-center d-flex" style="padding-top:20px;">
+                <div class="card">
+                    <img alt="TextBox" class="img-thumbnail card-img-top w-100 d-block" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/slice_TextBox_8.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Type: TextBox</h5>
+                        <h5 class="card-title">Probability: 81.91 %</h5>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 col-md-3 flex-row justify-content-center d-flex" style="padding-top:20px;">
+                <div class="card">
+                    <img alt="TextBox" class="img-thumbnail card-img-top w-100 d-block" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/slice_TextBox_9.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Type: TextBox</h5>
+                                <h5 class="card-title">Text: SEX</h5>
+                        <h5 class="card-title">Probability: 63.2 %</h5>
+
+                    </div>
+                </div>
+
+            </div>
+    </div>
+
+
+
+</div>
+
+
+
+    </div>
+
+    <div class="content-footer2">
+        <div class="container-fluid">
+
+            <div class="row hidden-responsive">
+
+                <div class="col">
+                    <img alt="Logo web" class="img-fluid float-right center-logo-right" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/img_spareMobile.svg">
+                </div>
+            </div>
+
+
+        </div>
+        <div id="footer" class="p-3 p-md-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="text-center text-white pb-4">
+                        Your picture may be used to improve the underlying AI.
+                    </div>
+                </div>
+                <div class="row footer-links2">
+                    <div class="col">
+                        <a href="https://www.microsoft.com/en-us/">
+                            <img alt="Microsoft Logo" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/logo_MS.png">
+                        </a>
+                    </div>
+                    <div class="col"><a target="_blank" href="https://www.ailab.microsoft.com/">AI Lab</a></div>
+                    <div class="col"><a target="_blank" href="https://support.microsoft.com/en-us/contactus">Contact Us</a></div>
+                    <div class="col"><a target="_blank" href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy &amp; Cookies</a></div>
+                    <div class="col"><a target="_blank" href="https://go.microsoft.com/fwlink/?LinkID=206977">Terms of use</a></div>
+                    <div class="col"><a target="_blank" href="https://www.microsoft.com/trademarks">Trademarks</a></div>
+                </div>
+            </div>
+            <div class="text-center text-white pt-5">
+                © Microsoft 2018
+            </div>
+        </div>
+    </div>
+
+    <script src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/jquery-3.0.0.js.下载"></script>
+    <script src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/bootstrap.js.下载"></script>
+
+    
+    <script>
+        $(document).ready(function () {
+            $("#step3").addClass("active");
+            $("#step3txt").addClass("active");
+            $("#step2").removeClass("active");
+            $("#step2txt").removeClass("active");
+            $("#step1").removeClass("active");
+            $("#step1txt").removeClass("active");
+
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        var consent = function () {
+            return (document.cookie.indexOf("Sketchconsent") != -1);
+        }
+
+        $(document).ready(function () {
+            var setConsentCookie = function () {
+                var d = new Date();
+                d.setTime(d.getTime() + (99999 * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + d.toUTCString();
+                document.cookie = "Sketchconsent=1;" + expires + ";path=/";
+                $("#disclaimer").hide();
+            };
+
+            if (!consent()) {
+                $("#disclaimer").show();
+                $("#cookie-consent").click(function () {
+                    setConsentCookie();
+                });
+                $("a").click(function () {
+                    setConsentCookie();
+                });
+            }
+        });
+
+    </script>
+
+    <!--Adobe analytics-->
+    <script src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/jsll-4.js.下载" type="text/javascript">
+    </script>
+    <script>
+        const config = {
+            syncMuid: awa.utils.isValueAssigned(window.awa.cookie.getCookie('Sketchconsent')),
+            userConsentCookieName: 'Sketchconsent',
+            autoCapture: {
+                lineage: true,
+                scroll: true
+            },
+            coreData: {
+                appId: 'Sketch2Code',
+                env: 'prod',
+                market: 'en-us',
+                pageName: 'Sketch2Code',
+                pageType: 'html'
+            },
+            useShortNameForContentBlob: true
+        };
+
+        if (consent())
+            awa.init(config);
+
+
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="./Sketch2Code - Transform sketches into HTML using AI-test1.3_files/js"></script>
+    <script>
+        if (consent()) {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-121469252-4');
+        }
+
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        if (consent()) {
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return; n = f.fbq = function () {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+                n.queue = []; t = b.createElement(e); t.async = !0;
+                t.src = v; s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '435868603227390');
+            fbq('track', 'PageView');
+        }
+
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=435868603227390&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    <!-- Twitter universal website tag code -->
+    <script>
+        if (consent()) {
+            !function (e, t, n, s, u, a) {
+                e.twq || (s = e.twq = function () {
+                    s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+                }, s.version = '1.1', s.queue = [], u = t.createElement(n), u.async = !0, u.src = '//static.ads-twitter.com/uwt.js',
+                    a = t.getElementsByTagName(n)[0], a.parentNode.insertBefore(u, a))
+            }(window, document, 'script');
+            // Insert Twitter Pixel ID and Standard Event data below
+            twq('init', 'nv9r3');
+            twq('track', 'PageView');
+        }
+
+    </script>
+    <!-- End Twitter universal website tag code -->
+    <!-- Twitter universal website tag code -->
+    <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?p_id=Twitter&amp;p_user_id=0&amp;txn_id=nv9r3&amp;events=%5B%5B%22pageview%22%2Cnull%5D%5D&amp;tw_sale_amount=0&amp;tw_order_quantity=0">
+    <img height="1" width="1" style="display:none;" alt="" src="https://t.co/i/adsct?p_id=Twitter&amp;p_user_id=0&amp;txn_id=nv9r3&amp;events=%5B%5B%22pageview%22%2Cnull%5D%5D&amp;tw_sale_amount=0&amp;tw_order_quantity=0">
+    <!-- End Twitter universal website tag code -->
+    <!-- LinkedIn-->
+    <script type="text/javascript">
+        _linkedin_data_partner_id = "7850";
+    </script>
+    <script type="text/javascript">
+        if (consent()) {
+            (function () {
+                var s = document.getElementsByTagName("script")[0];
+                var b = document.createElement("script");
+                b.type = "text/javascript"; b.async = true;
+                b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+                s.parentNode.insertBefore(b, s);
+            })();
+        }
+    </script>
+
+
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=7850&fmt=gif" />
+    </noscript>
+
+
+</body></html>
