@@ -1,0 +1,101 @@
+{
+  “UIView”：{
+    “创建” ： {
+      “模板”：“[UIView new]”
+    }，
+    “进口”：[]，
+    “properties”：{
+      “backgroundColor”：“style.fill.color”，
+      “layer.cornerRadius”：“layers.firstObject.fixedRadius”
+    }，
+    “布局”：{
+      “template”：“[<NAME> setFrame：CGRectMake（<X>，<Y>，<WIDTH>，<HEIGHT>）]”，
+      “绑定”：{
+        “<NAME>”：“return dict [\”name \“];”，
+        “<X>”：“返回数字（字典[\”x \“]。toFixed（4））;”，
+        “<Y>”：“返回数字（字典[\”y \“]。toFixed（4））;”，
+        “<WIDTH>”：“返回Number（dict [\”width \“]。toFixed（4））;”，
+        “<HEIGHT>”：“返回Number（dict [\”height \“]。toFixed（4））;”
+      }
+    }
+  }，
+  “UILabel”：{
+    “创建” ： {
+      “模板”：“[UILabel new]”
+    }，
+    “进口”：[]，
+    “properties”：{
+      “textColor”：“textColor”，
+      “text”：“stringValue”，
+      “font”：“font”，
+      “alpha”：“style.contextSettings.opacity”
+    }，
+    “布局”：{
+      “template”：“[<NAME> setFrame：CGRectMake（<X>，<Y>，<WIDTH>，<HEIGHT>）]”，
+      “绑定”：{
+        “<NAME>”：“return dict [\”name \“];”，
+        “<X>”：“返回数字（字典[\”x \“]。toFixed（4））;”，
+        “<Y>”：“返回数字（字典[\”y \“]。toFixed（4））;”，
+        “<WIDTH>”：“返回Number（dict [\”width \“]。toFixed（4））;”，
+        “<HEIGHT>”：“返回Number（dict [\”height \“]。toFixed（4））;”
+      }
+    }
+  }，
+  “UIFont”：{
+    “创建” ： {
+      “template”：“[UIFont fontWithName：<NAME> size：<SIZE>]”，
+      “绑定”：{
+        “<NAME>”：“return'@ \”'+ dict [\“fontName \”] +'\“';”，
+        “<SIZE>”：“返回Math.ceil（dict [\”pointSize \“]）;”
+      }
+    }
+  }，
+  “UIColor”：{
+    “创建” ： {
+      “template”：“[UIColor colorWithRed：<r> green：<g> blue：<b> alpha：<a>]”，
+      “绑定”：{
+        “<r>”：“返回Number（dict [\”red \“]。toFixed（4））;”，
+        “<g>”：“返回Number（字典[\”green \“]。toFixed（4））;”，
+        “<b>”：“返回数字（字母[\”蓝色\“]。toFixed（4））;”，
+        “<a>”：“返回Number（dict [\”alpha \“]。toFixed（4））;”
+      }
+    }
+  }，
+  “UIImageView”：{
+    “创建” ： {
+      “template”：“[[UIImageView alloc] initWithImage：[UIImage imageNamed：<NAME>]]”，
+      “绑定”：{
+        “<NAME>”：“return'@ \”'+ dict [\“name \”] +'\“';”
+      }
+    }，
+    “布局”：{
+      “template”：“[<NAME> setFrame：CGRectMake（<X>，<Y>，<WIDTH>，<HEIGHT>）]”，
+      “绑定”：{
+        “<NAME>”：“return dict [\”name \“];”，
+        “<X>”：“返回字典[\”x \“];”，
+        “<Y>”：“返回字典[\”y \“];”，
+        “<WIDTH>”：“return dict [\”width \“];”，
+        “<HEIGHT>”：“返回dict [\”height \“];”
+      }
+    }，
+    “出口” ： {
+      “格式”：“pdf”
+    }
+  }，
+  “NSString”：{
+    “创建” ： {
+      “template”：“@ \”<string> \“”，
+      “绑定”：{
+        “<string>”：“return dict [\”description \“];”
+      }
+    }
+  }，
+  “身份”：{
+    “创建” ： {
+      “template”：“<identity>”，
+      “绑定”：{
+        “<identity>”：“return dict [\”description \“];”
+      }
+    }
+  }
+}
