@@ -127,3 +127,21 @@ Computer Vision is a discipline inside artificial intelligence that gives an app
 解决方案The Solution
 The model behind this service has been trained with millions of images and enables object detection for a wide range of types of objects. In this case, we need to build a custom model and train it with images of hand-drawn design elements like a textbox, button or combobox. The Custom Vision Service gives us with the capability to train custom models and perform object detection for them. Once we can identify HTML objects we use the text recognition functionality present in the Computer Vision Service to extract hand-written text present in the design. By combining these two pieces of information, we can generate the HTML snippets of the different elements in the design. We then can infer the layout of the design from the position of the identified elements and generate the final HTML code accordingly.
 该服务背后的模型已经过数百万个图像的训练，可以对各种类型的物体进行物体检测。在这种情况下，我们需要构建一个自定义模型，并使用手绘设计元素的图像进行训练，如文本框，按钮或组合框。Custom Vision Service使我们能够训练自定义模型并为其执行对象检测。一旦我们能够识别HTML对象，我们就可以使用计算机视觉服务中提供的文本识别功能来提取设计中出现的手写文本。通过组合这两个信息，我们可以生成设计中不同元素的HTML片段。然后，我们可以从已识别元素的位置推断出设计的布局，并相应地生成最终的HTML代码。
+
+
+
+Usage
+
+curl s2c.sh | bash -s sample.jpg
+it will generate to sample.html
+
+
+Install
+
+alias s2c.sh='curl s2c.sh | bash -s'
+s2c.sh sample.jpg
+
+
+Uninstall
+
+unalias s2c.sh
