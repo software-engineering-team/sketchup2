@@ -131,12 +131,17 @@ The model behind this service has been trained with millions of images and enabl
 
 
 Usage
+
 curl s2c.sh | bash -s sample.jpg
 it will generate to sample.html
 
+
 Install
+
 alias s2c.sh='curl s2c.sh | bash -s'
 s2c.sh sample.jpg
 
+
 Uninstall
+
 unalias s2c.sh
