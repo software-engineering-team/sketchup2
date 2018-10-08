@@ -1,0 +1,227 @@
+由于无法对汉字进行识别，我对源代码进行了初步的分析：
+这个程序用了机器学习的一些方法，我对其中一个图片的标签进行了分析。
+ {
+    "id": "2469da39-65f0-428b-a1de-cedbba7db32e",
+    "created": "2018-07-11T07:27:39.1873304Z",
+    "width": 1600,
+    "height": 564,
+    "imageUri": null,
+    "thumbnailUri": null,
+可以看到，这几行程序仅仅涉及对退    "width"，"height"，"imageUri":，"thumbnailUri"进行了标注，不涉及
+   
+   
+   
+   
+   
+   "tags": [
+      {
+        "tagId": "530d20f2-7260-42f1-bd42-bddca465c9e9",
+        "tagName": "RadioButton",
+        "created": "2018-07-11T07:30:26.579225Z"
+      },
+      {
+        "tagId": "69576625-a3c1-40bb-8947-936491484048",
+        "tagName": "Button",
+        "created": "2018-07-11T07:30:26.579225Z"
+      },
+      {
+        "tagId": "b9944914-2e80-4b6a-8874-0fe55d073c45",
+        "tagName": "Label",
+        "created": "2018-07-11T07:30:26.579225Z"
+      },
+      {
+        "tagId": "c266ec15-593b-425f-a6e1-384c4df0a781",
+        "tagName": "TextBox",
+        "created": "2018-07-11T07:30:26.579225Z"
+      },
+      {
+        "tagId": "d5cedd3f-acf2-4dce-8ead-e1a74e7e11d6",
+        "tagName": "CheckBox",
+        "created": "2018-07-11T07:30:26.579225Z"
+      }
+    ],
+    "regions": [
+      {
+        "regionId": "058d3c7a-a9fd-4c76-9f05-9eaff024c321",
+        "tagName": "CheckBox",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "d5cedd3f-acf2-4dce-8ead-e1a74e7e11d6",
+        "left": 0.2646843,
+        "top": 0.5903212,
+        "width": 0.167400882,
+        "height": 0.146875
+      },
+      {
+        "regionId": "219ca3ac-6f74-45a8-913d-58127f057bd0",
+        "tagName": "Button",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "69576625-a3c1-40bb-8947-936491484048",
+        "left": 0.6182085,
+        "top": 0.749696136,
+        "width": 0.12334802,
+        "height": 0.234375
+      },
+      {
+        "regionId": "26714dc1-b8e4-4e7e-8ad7-ccf168a20755",
+        "tagName": "Label",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "b9944914-2e80-4b6a-8874-0fe55d073c45",
+        "left": 0.0113803176,
+        "top": 0.259071171,
+        "width": 0.1938326,
+        "height": 0.109375
+      },
+      {
+        "regionId": "26ab6761-cb09-4d49-9688-f70231229a3f",
+        "tagName": "CheckBox",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "d5cedd3f-acf2-4dce-8ead-e1a74e7e11d6",
+        "left": 0.6182085,
+        "top": 0.390321165,
+        "width": 0.189427316,
+        "height": 0.13125
+      },
+      {
+        "regionId": "289d3621-f673-4142-9deb-a87c06b8c194",
+        "tagName": "RadioButton",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "530d20f2-7260-42f1-bd42-bddca465c9e9",
+        "left": 0.502569735,
+        "top": 0.190321162,
+        "width": 0.09251101,
+        "height": 0.109375
+      },
+      {
+        "regionId": "2917d2a2-4bb0-4093-ad26-3f45b6775e47",
+        "tagName": "RadioButton",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "530d20f2-7260-42f1-bd42-bddca465c9e9",
+        "left": 0.74706316,
+        "top": 0.149696156,
+        "width": 0.113436125,
+        "height": 0.1375
+      },
+      {
+        "regionId": "32899f95-0a2f-40e9-a900-657897cda0be",
+        "tagName": "TextBox",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "c266ec15-593b-425f-a6e1-384c4df0a781",
+        "left": 0.141336262,
+        "top": 0.04032116,
+        "width": 0.2852423,
+        "height": 0.121875
+      },
+      {
+        "regionId": "4369473a-3fb1-4c71-84dd-e4961742596b",
+        "tagName": "CheckBox",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "d5cedd3f-acf2-4dce-8ead-e1a74e7e11d6",
+        "left": 0.26248163,
+        "top": 0.430946171,
+        "width": 0.149779737,
+        "height": 0.109375
+      },
+      {
+        "regionId": "5c13d430-3e35-4304-99c0-dbc5cb98e406",
+        "tagName": "RadioButton",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "530d20f2-7260-42f1-bd42-bddca465c9e9",
+        "left": 0.6171072,
+        "top": 0.196571156,
+        "width": 0.11894273,
+        "height": 0.09375
+      },
+      {
+        "regionId": "6689e1e2-d7f5-4cf5-b30b-24c5538cfd59",
+        "tagName": "CheckBox",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "d5cedd3f-acf2-4dce-8ead-e1a74e7e11d6",
+        "left": 0.8307636,
+        "top": 0.5278212,
+        "width": 0.157488987,
+        "height": 0.134375
+      },
+      {
+        "regionId": "8f185858-3680-416a-94fb-faa0c12b0304",
+        "tagName": "Label",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "b9944914-2e80-4b6a-8874-0fe55d073c45",
+        "left": 0.0102789961,
+        "top": 0.443446159,
+        "width": 0.196035236,
+        "height": 0.165625
+      },
+      {
+        "regionId": "95965d4b-52d9-47bd-86fa-06665bee17b9",
+        "tagName": "Label",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "b9944914-2e80-4b6a-8874-0fe55d073c45",
+        "left": 0.009177675,
+        "top": 0.02469616,
+        "width": 0.10352423,
+        "height": 0.159375
+      },
+      {
+        "regionId": "9681711b-7c99-4324-93f9-7d740e8d6353",
+        "tagName": "Button",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "69576625-a3c1-40bb-8947-936491484048",
+        "left": 0.7723935,
+        "top": 0.749696136,
+        "width": 0.142070487,
+        "height": 0.209375
+      },
+      {
+        "regionId": "9aced00a-8959-4d95-af55-cb32f53ab31f",
+        "tagName": "CheckBox",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "d5cedd3f-acf2-4dce-8ead-e1a74e7e11d6",
+        "left": 0.436490446,
+        "top": 0.402821153,
+        "width": 0.156387672,
+        "height": 0.134375
+      },
+      {
+        "regionId": "b8cb86e6-5611-453b-a141-7e7f58c58446",
+        "tagName": "CheckBox",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "d5cedd3f-acf2-4dce-8ead-e1a74e7e11d6",
+        "left": 0.827459633,
+        "top": 0.368446171,
+        "width": 0.167400882,
+        "height": 0.153125
+      },
+      {
+        "regionId": "c9d2b2f1-a9fa-4cb1-acd8-5901d06bcd1d",
+        "tagName": "RadioButton",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "530d20f2-7260-42f1-bd42-bddca465c9e9",
+        "left": 0.2712922,
+        "top": 0.218446165,
+        "width": 0.205947131,
+        "height": 0.121875
+      },
+      {
+        "regionId": "d816923c-da1e-49c8-ae3f-ebe5f0bfb7e8",
+        "tagName": "CheckBox",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "d5cedd3f-acf2-4dce-8ead-e1a74e7e11d6",
+        "left": 0.625917733,
+        "top": 0.5434462,
+        "width": 0.172907487,
+        "height": 0.165625
+      },
+      {
+        "regionId": "d81cea81-bae7-42c2-ac80-e3a359234037",
+        "tagName": "CheckBox",
+        "created": "2018-07-11T07:30:26.5948315Z",
+        "tagId": "d5cedd3f-acf2-4dce-8ead-e1a74e7e11d6",
+        "left": 0.4441997,
+        "top": 0.584071159,
+        "width": 0.165198237,
+        "height": 0.115625
+      }
+    ]
+  }
+  
+ 
