@@ -103,7 +103,7 @@ namespace Sketch2Code.Core
                 await Task.Delay(Convert.ToInt32(ConfigurationManager.AppSettings["ComputerVisionDelay"]));
             }
         }
-
+//这个函数用来定义边界
         private void assignPredictedText2(PredictedObject predictedObject, HandwritingTextLine[] textLines)
         {
             predictedObject.Text = new List<string>();
@@ -139,14 +139,14 @@ namespace Sketch2Code.Core
 
         private void removeUnusableImages(List<PredictedObject> list)
         {
-            //Remove images with size over 4mb
+            //Remove images with size over 4mb，
             list.RemoveAll(img => img.SlicedImage.Length >= 4 * 1024 * 1024);
 
             //Exclude images outside of this range  40x40 - 3200x3200
             list.RemoveAll(p => p.BoundingBox.Height > 3200 || p.BoundingBox.Height < 40);
             list.RemoveAll(p => p.BoundingBox.Width > 3200 || p.BoundingBox.Width < 40);
         }
-
+//图片里每一个区域的范围
         private PredictedObject buildPredictedObject(PredictionModel p, Image image, byte[] data)
         {
             PredictedObject predictedObject = new PredictedObject();
