@@ -7,9 +7,10 @@
     "height": 564,
     "imageUri": null,
     "thumbnailUri": null,
-可以看到，这几行程序仅仅涉及对退    "width"，"height"，"imageUri":，"thumbnailUri"进行了标注，不涉及
-   
-   
+可以看到，这几行程序仅仅涉及对退    "width"，"height"，"imageUri":，"thumbnailUri"进行了标注，不涉及对任何文字的处理。
+ 
+ 然后对接下来的"tag"进行处理。发现在"tagName"这里面"RadioButton"，"Button"，"TextBox"，"CheckBox" 这些feature.
+ 
    
    
    
