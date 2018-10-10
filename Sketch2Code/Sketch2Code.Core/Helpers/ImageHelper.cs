@@ -20,7 +20,7 @@ namespace Sketch2Code.Core.Helpers
                 return SliceImage(ms, x, y, width, height);
             }
         }
-        public static byte[] SliceImage(this Stream image, double x, double y, double width, double height)
+        public static byte[] SliceImage(this Stream image, double x, double y, double width, double height)  //切分图片
         {
             var _width = (int)Math.Floor(width);
             var _height = (int)Math.Floor(height);
@@ -39,7 +39,7 @@ namespace Sketch2Code.Core.Helpers
                 }
             }
         }
-        public static byte[] DrawRectangle(this Stream image, IList<PredictedObject> objects)
+        public static byte[] DrawRectangle(this Stream image, IList<PredictedObject> objects)  //矩形绘制
         {
             byte[] buffer = null;
 
@@ -90,7 +90,7 @@ namespace Sketch2Code.Core.Helpers
             }
         }
 
-        public static byte[] DrawRectangle(this byte[] image, double x, double y, double width, double height)
+        public static byte[] DrawRectangle(this byte[] image, double x, double y, double width, double height)  //矩形绘制
         {
             using (var ms = new MemoryStream(image))
             {
@@ -114,7 +114,7 @@ namespace Sketch2Code.Core.Helpers
         }
 
 
-        public static Dictionary<string, Brush> Colors
+        public static Dictionary<string, Brush> Colors //数据字典
         {
             get
             {
@@ -133,7 +133,7 @@ namespace Sketch2Code.Core.Helpers
             }
         }
 
-        private static Image scaleByPercent(Image imgPhoto, int Percent)
+        private static Image scaleByPercent(Image imgPhoto, int Percent)  //按百分比设置图像比例
         {
             float nPercent = ((float)Percent / 100);
 
@@ -165,7 +165,7 @@ namespace Sketch2Code.Core.Helpers
             return bmPhoto;
         }
 
-        public static byte[] OptimizeImage(byte[] original, int scale, int quality)
+        public static byte[] OptimizeImage(byte[] original, int scale, int quality)  //图片优化
         {
             MemoryStream outStream = new MemoryStream();
 
@@ -188,7 +188,7 @@ namespace Sketch2Code.Core.Helpers
 
 
 
-        private static int calculateScale(double width, double height)
+        private static int calculateScale(double width, double height)  //图片规模计算
         {
             double dimension;
 
@@ -209,7 +209,7 @@ namespace Sketch2Code.Core.Helpers
             return 100;
         }
 
-        private static ImageCodecInfo GetEncoderInfo(string mimeType)
+        private static ImageCodecInfo GetEncoderInfo(string mimeType)  //获取图像编解码器信息
         {
             int j;
             ImageCodecInfo[] encoders;
@@ -224,7 +224,7 @@ namespace Sketch2Code.Core.Helpers
 
         
 
-        public static void ExifRotate(Image img)
+        public static void ExifRotate(Image img)   //旋转调整
         {
             
             const int exifOrientationID = 0x0112; //274

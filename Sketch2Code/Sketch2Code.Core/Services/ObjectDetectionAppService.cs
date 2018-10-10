@@ -22,7 +22,7 @@ using Microsoft.ProjectOxford.Vision.Contract;
 
 namespace Sketch2Code.Core
 {
-    public class ObjectDetectionAppService : IObjectDetectionAppService
+    public class ObjectDetectionAppService : IObjectDetectionAppService    //程序检测服务
     {
         ObjectDetector _detectorClient;
         CloudBlobClient _cloudBlobClient;
@@ -80,14 +80,14 @@ namespace Sketch2Code.Core
             return list;
         }
 
-        private static void removePredictionsUnderProbabilityThreshold(List<PredictionModel> predictions)
+        private static void removePredictionsUnderProbabilityThreshold(List<PredictionModel> predictions)  //删除概率阈值下的预测
         {
             var Probability = Convert.ToInt32(ConfigurationManager.AppSettings["Probability"]);
 
             predictions.RemoveAll(p => p.Probability < (Probability / 100D));
         }
 
-        private async Task assignPredictedText(PredictedObject predictedObject)
+        private async Task assignPredictedText(PredictedObject predictedObject)  //异步任务分配预测文本
         {
             //Exclude images from non predictable classes
             var nonPredictableClasses = new string[] { Controls.Image, Controls.Paragraph, Controls.TextBox };
@@ -195,7 +195,7 @@ namespace Sketch2Code.Core
             return img;
         }
 
-        public async Task SaveResults(IList<PredictedObject> predictedObjects, string id)
+        public async Task SaveResults(IList<PredictedObject> predictedObjects, string id)  //异步保存结果
         {
             if (_cloudBlobClient == null) throw new InvalidOperationException("blobClient is null");
             var slices_container = $"{id}/slices";
@@ -206,7 +206,7 @@ namespace Sketch2Code.Core
                 await this.SaveResults(result.SlicedImage, slices_container, $"{result.Name}.png");
             }
         }
-        public async Task SaveResults(byte[] file, string container, string fileName)
+        public async Task SaveResults(byte[] file, string container, string fileName)   //异步保存结果
         {
             CloudBlobContainer theContainer = null;
 
@@ -232,7 +232,7 @@ namespace Sketch2Code.Core
             await blob.UploadFromByteArrayAsync(file, 0, file.Length);
         }
 
-        public async Task SaveHtmlResults(string html, string container, string fileName)
+        public async Task SaveHtmlResults(string html, string container, string fileName)  //异步保存Html结果
         {
             CloudBlobContainer theContainer = null;
 
@@ -257,7 +257,7 @@ namespace Sketch2Code.Core
             var blob = theContainer.GetBlockBlobReference(fileName);
             await blob.UploadTextAsync(html);
         }
-        public async Task<PredictionDetail> GetPredictionAsync(string folderId)
+        public async Task<PredictionDetail> GetPredictionAsync(string folderId)  //获取预测异步
         {
             if (String.IsNullOrWhiteSpace(folderId))
                 throw new ArgumentNullException("folderId");
@@ -284,7 +284,7 @@ namespace Sketch2Code.Core
             return await Task.Run(() => _cloudBlobClient.ListContainers().Where(l => l.Name != "azure-webjobs-hosts")
                 .OrderByDescending(c => c.Properties.LastModified).ToList());
         }
-        public async Task<byte[]> GetFile(string container, string file)
+        public async Task<byte[]> GetFile(string container, string file)   //获取文件
         {
             var blobcontainer = _cloudBlobClient.GetContainerReference(container);
             if (!await blobcontainer.ExistsAsync())
@@ -302,13 +302,13 @@ namespace Sketch2Code.Core
                 return ms.ToArray();
             }
         }
-        public async Task<T> GetFile<T>(string container, string file)
+        public async Task<T> GetFile<T>(string container, string file)  //获取文件
         {
             var data = await this.GetFile(container, file);
             if (data == null) return default(T);
             return JsonConvert.DeserializeObject<T>(Encoding.UTF8.GetString(data));
         }
-        public async Task<GroupBox> CreateGroupBoxAsync(IList<PredictedObject> predictedObjects)
+        public async Task<GroupBox> CreateGroupBoxAsync(IList<PredictedObject> predictedObjects)  //创建group
         {
             var result = await Task.Run(() =>
             {
