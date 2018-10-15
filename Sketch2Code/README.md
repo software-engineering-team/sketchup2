@@ -1,9 +1,8 @@
 # Sketch2Code Documentation
 
-## Description
+//Description
 Sketch2Code is a solution that uses AI to transform a handwritten user interface design from a picture to valid HTML markup code. 
-
-## Process flow
+//Process flow
 The process of transformation of a handwritten image to HTML this solution implements is detailed as follows:
 1.	The user uploads an image through the website.
 2.	A custom vision model predicts what HTML elements are present in the image and their location.
@@ -15,8 +14,7 @@ The process of transformation of a handwritten image to HTML this solution imple
 3.手写文本识别服务读取预测元素内的文本。
 4.布局算法使用来自预测元素的所有边界框的空间信息来生成适应所有边界框的网格结构。
 5. HTML生成引擎使用所有这些信息来生成反映结果的HTML标记代码。
-
-## Architecture
+//Architecture
 The Sketch2Code solution uses the following elements:
 -	A Microsoft Custom Vision Model: This model has been trained with images of different handwritten designs tagging the information of most common HTML elements like Buttons, TextBox and Image.
 -	A Microsoft Computer Vision Service: To identify the text written into a design element a Computer Vision Service is used.
@@ -35,35 +33,35 @@ Sketch2Code解决方案使用以下元素：
 这些元素构成如下架构：
 
 
-## How to configure the solution
+//How to configure the solution
 
-### Microsoft Custom Vision Model
+//Microsoft Custom Vision Model
 The training set used to create the sample model used in the project is located in the Model folder. Each training image has a unique identifier that matches information contained in the dataset.json file. This file contains all the tag information used to train the sample model.
 To create your own model you can use this dataset to start and using the Custom Vision API upload this dataset to your own project.
 You can create your Custom Vision Project at https://customvision.ai
 Once you have created your Custom Vision Project you need to annotate the Key and the Project Name to configure the Azure Function to call use the service.
 
-### Microsoft自定义视觉模型
+//Microsoft自定义视觉模型
 用于创建项目中使用的样本模型的训练集位于“模型”文件夹中。每个训练图像都有一个唯一的标识符，该标识符与dataset.json文件中包含的信息相匹配。此文件包含用于训练样本模型的所有标记信息。
 要创建自己的模型，您可以使用此数据集启动并使用Custom Vision API将此数据集上载到您自己的项目。
 您可以通过https://customvision.ai创建自定义视觉项目
 创建自定义视觉项目后，需要注释密钥和项目名称以配置Azure功能以调用使用该服务
 
-### Computer Vision Service
+//Computer Vision Service
 A Microsoft Computer Vision Service is needed to perform handwritten character recognition.
 To create this service go to your Azure Subscription and create your own service. Annotate the Endpoint and the Key to complete the configuration of the solution.
-###计算机视觉服务
+//计算机视觉服务
 需要Microsoft Computer Vision Service来执行手写字符识别。
 要创建此服务，请转到Azure订阅并创建自己的服务。注释端点和密钥以完成解决方案的配置。
 
-### Azure Blob Storage
+//Azure Blob Storage
 An Azure Blob Storage is used to store all the intermediary steps of the process.
 A new folder is created for each generation process with the following contents:
 -	\slices: Contains the cropped images used for text prediction.
 -	Original.png: image uploaded by the user.
 -	results.json: results from the prediction process run against the original image.
 -	groups.json: results from the layout algorithm containing the spatial distribution of predicted objects.
-### Azure Blob存储
+//Azure Blob存储
 Azure Blob存储用于存储该进程的所有中间步骤。
 将为每个生成过程创建一个新文件夹，其中包含以下内容：
 - \ slices：包含用于文本预测的裁剪图像。
@@ -71,7 +69,7 @@ Azure Blob存储用于存储该进程的所有中间步骤。
 - results.json：预测过程的结果针对原始图像运行。
 - groups.json：包含预测对象的空间分布的布局算法的结果。
 
-### Azure function
+//Azure function
 The code for the provided Azure Function is located in the Sketch2Code.Api folder. You can use this code to create your own function and must define the following configuration parameters:
 -	AzureWebJobsStorage: Endpoint to the Azure Storage.
 -	ComputerVisionDelay: Time in milliseconds to wait between calls to the computer vision service. Sample works with 120ms.
@@ -82,7 +80,7 @@ The code for the provided Azure Function is located in the Sketch2Code.Api folde
 -	ObjectDetectionProjectName: Name of the custom vision project.
 -	ObjectDetectionTrainingKey: Training key for the custom vision service.
 -	Probability: Probability threshold to consider a successful object detection. Below this value predictions are not considered. Sample model works with 40. 
-### Azure功能
+//Azure功能
 提供的Azure功能的代码位于Sketch2Code.Api文件夹中。您可以使用此代码创建自己的函数，并且必须定义以下配置参数：
 - AzureWebJobsStorage：Azure存储的端点。
 - ComputerVisionDelay：在呼叫计算机视觉服务之间等待的时间（以毫秒为单位）。样本工作120ms。
@@ -94,11 +92,11 @@ The code for the provided Azure Function is located in the Sketch2Code.Api folde
 - ObjectDetectionTrainingKey：自定义视觉服务的培训密钥。
 - 概率：考虑成功检测对象的概率阈值。低于此值预测不予考虑。样本模型适用于40。
 
-### Azure Website
+//Azure Website
 The Sketch2Code.Web contains the code used to implement the front-end website. Two parameters must be configured:
 -	Sketch2CodeAppFunctionEndPoint: Endpoint to the Azure Function
 -	storageUrl: Url for the Azure Storage. 
-### Azure网站
+//Azure网站
 Sketch2Code.Web包含用于实现前端网站的代码。必须配置两个参数：
 - Sketch2CodeAppFunctionEndPoint：Azure函数的端点
 - storageUrl：Azure存储的URL。
