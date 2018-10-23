@@ -10,11 +10,11 @@ The process of transformation of a handwritten image to HTML this solution imple
 3.	A handwritten text recognition service reads the text inside the predicted elements.
 4.	A layout algorithm uses the spatial information from all the bounding boxes of the predicted elements to generate a grid structure that accommodates all.
 5.	An HTML generation engine uses all these pieces of information to generate an HTML markup code reflecting the result.
-1.用户通过网站上传图像。
+1.用户通过网站上传图片。
 2.自定义视觉模型预测图像中存在的HTML元素及其位置。
-3.手写文本识别服务读取预测元素内的文本。
-4.布局算法使用来自预测元素的所有边界框的空间信息来生成适应所有边界框的网格结构。
-5. HTML生成引擎使用所有这些信息来生成反映结果的HTML标记代码。
+3.手写文本识别以读取预测元素内的文本信息。
+4.通过布局算法，预测元素的所有边界框的空间信息，生成适应所有边界框的网格结构。
+5.通过HTML生成引擎，将所有这些信息生成反映结果的HTML标记代码。
 
 ## Architecture
 The Sketch2Code solution uses the following elements:
