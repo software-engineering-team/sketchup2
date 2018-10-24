@@ -27,11 +27,11 @@ This elements form the architecture as follows:
 ![Sketch2Code Architecture](https://github.com/Microsoft/ailab/blob/master/Sketch2Code/images/architecture.png)
 
 Sketch2Code解决方案使用以下元素：
-- Microsoft自定义视觉模型：此模型已经过训练，其中包含不同手写设计的图像，用于标记最常见的HTML元素（如按钮，文本框和图像）的信息。
-- Microsoft计算机视觉服务：为了识别写入设计元素的文本，使用计算机视觉服务。
-- Azure Blob存储：存储HTML生成过程中涉及的所有步骤，包括原始图像，预测结果和布局分组信息。
-- Azure功能：用作后端入口点，通过与所有服务交互来协调生成过程。
-- Azure WebSite：User font-end，用于上载新设计并查看生成的HTML结果。
+- Microsoft自定义视觉模型：此模型已经经过训练，其中包含不同手写设计生成的图像，用于标记最常见的HTML元素（如按钮，文本框和图像）的相关信息。
+- Microsoft计算机视觉服务：为了识别写入设计元素的文本，采用计算机视觉服务。
+- Azure Blob存储：存储HTML生成的过程中涉及的所有步骤，包括原始图像，预测结果和布局分组的相关信息。
+- Azure功能：作为后端接入点，通过与所有服务进行交互来协调生成的过程。
+- Azure WebSite：User font-end，用于上载新的设计并查看已经生成的HTML结果。
 这些元素构成如下架构：
 
 
