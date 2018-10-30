@@ -13,7 +13,7 @@ namespace Sketch2Code.Core.Helpers
 {
     public static class ImageHelper
     {
-        public static byte[] SliceImage(this byte[] image, double x, double y, double width, double height)
+        public static byte[] SliceImage(this byte[] image, double x, double y, double width, double height)   //图片信息
         {
             using (var ms = new MemoryStream(image))
             {
@@ -98,7 +98,7 @@ namespace Sketch2Code.Core.Helpers
                 {
                     using (var graphics = Graphics.FromImage(img))
                     {
-                        var _width = (int)Math.Floor(width);
+                        var _width = (int)Math.Floor(width);         //长、宽以及边界
                         var _height = (int)Math.Floor(height);
                         var _x = (int)Math.Floor(x);
                         var _y = (int)Math.Floor(y);
@@ -118,7 +118,7 @@ namespace Sketch2Code.Core.Helpers
         {
             get
             {
-                var dict = new Dictionary<string, Brush>();
+                var dict = new Dictionary<string, Brush>();     //各类元素
                 dict.Add("Button", Brushes.Firebrick);
                 dict.Add("CheckBox", Brushes.Goldenrod);
                 dict.Add("ComboBox", Brushes.MediumVioletRed);
