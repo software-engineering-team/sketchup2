@@ -107,13 +107,13 @@ Sketch2Code.Web包含用于实现前端网站的代码。必须配置两个参�
 Sketch2Code 工作流程
 
 1.检测设计模式
-训练用于针对HTML手绘图案执行对象识别的自定义视觉模型用于将有意义的设计元素检测到图像中。
+训练：针对HTML手绘图案执行对象识别的自定义视觉模型，将有意义的设计元素检测到图像中。
 2.理解手写文字
-每个检测到的元素都通过文本识别服务来提取手写内容。
+将每个检测到的元素都通过文本识别服务来提取手写内容信息。
 3.理解结构
-检测到的对象的信息及其在图像内的位置被输入到生成底层结构的算法中。
+将检测到的对象的相关信息及其在图像内的位置信息输入到生成底层结构的算法中。
 4.构件HTML
-根据检测到的包含检测到的设计元素的布局生成有效的HTML。
+根据检测到的设计元素的布局生成有效的HTML。
 
 需求The Need
 User Interface Design process involves a lot a creativity that starts on a whiteboard where designers share ideas. Once a design is drawn, it is usually captured within a photograph and manually translated into some working HTML wireframe to play with in a web browser. This takes effort and delays the design process.
