@@ -59,6 +59,10 @@ for image, tagcode in read_from_gnt_dir(gnt_dir=test_data_dir):
         if FLAGS.random_flip_up_down:
             images = tf.image.random_flip_up_down(images)
         if FLAGS.random_flip_left_right:
+    def pre_process(images):
+        if FLAGS.random_flip_up_down:
+            images = tf.image.random_flip_up_down(images)
+        if FLAGS.random_flip_left_right:
             images = tf.image.random_flip_left_right(images)
         if FLAGS.random_brightness:
             images = tf.image.random_brightness(images, max_delta=0.3)
