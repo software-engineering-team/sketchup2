@@ -19,3 +19,9 @@ test_data_dir = os.path.join(data_dir, 'HWDB1.1tst_gnt')
                 break
             image = np.fromfile(f, dtype='uint8', count=width*height).reshape((height, width))
             yield image, tagcode
+    for file_name in os.listdir(gnt_dir):
+        if file_name.endswith('.gnt'):
+            file_path = os.path.join(gnt_dir, file_name)
+            with open(file_path, 'rb') as f:
+                for image, tagcode in one_file(f):
+                    yield image, tagcode
