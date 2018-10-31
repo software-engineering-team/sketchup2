@@ -84,3 +84,61 @@ python convert_batch_of_images.py --pngs_path {path/to/folder/with/pngs} \
       --model_json_file {path/to/model/json_file.json} \
       --model_weights_file {path/to/model/weights.h5}
 ```
+Train the model:
+```sh
+cd src
+
+# training from scratch
+# <augment_training_data> adds Keras ImageDataGenerator augmentation for training images
+python train.py --data_input_path {path/to/folder/with/pngs/guis} \
+      --validation_split 0.2 \
+      --epochs 10 \
+      --model_output_path {path/to/output/model}
+      --augment_training_data 1
+
+# training starting with pretrained model
+python train.py --data_input_path {path/to/folder/with/pngs/guis} \
+      --validation_split 0.2 \
+      --epochs 10 \
+      --model_output_path {path/to/output/model} \
+      --model_json_file ../bin/model_json.json \
+      --model_weights_file ../bin/pretrained_weights.h5 \
+      --augment_training_data 1
+```
+
+Evalute the generated prediction using the [BLEU score](https://machinelearningmastery.com/calculate-bleu-score-for-text-python/)
+```sh
+cd src
+
+# evaluate single GUI prediction
+python evaluate_single_gui.py --original_gui_filepath  {path/to/original/gui/file} \
+      --predicted_gui_filepath {path/to/predicted/gui/file}
+
+# training starting with pretrained model
+python evaluate_batch_guis.py --original_guis_filepath  {path/to/folder/with/original/guis} \
+      --predicted_guis_filepath {path/to/folder/with/predicted/guis}
+```
+
+## License
+
+### The MIT License (MIT)
+
+Copyright (c) 2018 Ashwin Kumar<ash.nkumar@gmail.com@gmail.com>
+
+> Permission is hereby granted, free of charge, to any person obtaining a copy
+> of this software and associated documentation files (the "Software"), to deal
+> in the Software without restriction, including without limitation the rights
+> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+> copies of the Software, and to permit persons to whom the Software is
+> furnished to do so, subject to the following conditions:
+>
+> The above copyright notice and this permission notice shall be included in
+> all copies or substantial portions of the Software.
+>
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+> THE SOFTWARE.
