@@ -47,3 +47,11 @@ for image, tagcode in read_from_gnt_dir(gnt_dir=test_data_dir):
         os.mkdir(dir_name)
     im.convert('RGB').save(dir_name+'/' + str(test_counter) + '.png')
     test_counter += 1
+    
+    def batch_data(file_labels,sess, batch_size=128):
+    image_list = [file_label[0] for file_label in file_labels]
+    label_list = [int(file_label[1]) for file_label in file_labels]
+    print 'tag2 {0}'.format(len(image_list))
+    images_tensor = tf.convert_to_tensor(image_list, dtype=tf.string)
+    labels_tensor = tf.convert_to_tensor(label_list, dtype=tf.int64)
+    input_queue = tf.train.slice_input_producer([images_tensor, labels_tensor])
