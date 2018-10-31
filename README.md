@@ -40,3 +40,26 @@ This project builds on the synthetically generated dataset and model architectur
 ```sh
 pip install -r requirements.txt
 ```
+## Example Usage
+
+Download the data and pretrained weights:
+```sh
+# Getting the data, 1,700 images, 342mb
+git clone https://github.com/ashnkumar/sketch-code.git
+cd sketch-code
+cd scripts
+
+# Get the data and pretrained weights
+sh get_data.sh
+sh get_pretrained_model.sh
+```
+
+Converting an example drawn image into HTML code, using pretrained weights:
+```sh
+cd src
+
+python convert_single_image.py --png_path ../examples/drawn_example1.png \
+      --output_folder ./generated_html \
+      --model_json_file ../bin/model_json.json \
+      --model_weights_file ../bin/weights.h5
+```
