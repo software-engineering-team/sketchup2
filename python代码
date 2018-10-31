@@ -5,4 +5,17 @@ from PIL import Image
 data_dir = '../data'
 train_data_dir = os.path.join(data_dir, 'HWDB1.1trn_gnt')
 test_data_dir = os.path.join(data_dir, 'HWDB1.1tst_gnt')
- 
+ def read_from_gnt_dir(gnt_dir=train_data_dir):
+    def one_file(f):
+        header_size = 10
+        while True:
+            header = np.fromfile(f, dtype='uint8', count=header_size)
+            if not header.size: break
+            sample_size = header[0] + (header[1]<<8) + (header[2]<<16) + (header[3]<<24)
+            tagcode = header[5] + (header[4]<<8)
+            width = header[6] + (header[7]<<8)
+            height = header[8] + (header[9]<<8)
+            if header_size + width*height != sample_size:
+                break
+            image = np.fromfile(f, dtype='uint8', count=width*height).reshape((height, width))
+            yield image, tagcode
