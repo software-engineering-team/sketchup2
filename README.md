@@ -63,3 +63,24 @@ python convert_single_image.py --png_path ../examples/drawn_example1.png \
       --model_json_file ../bin/model_json.json \
       --model_weights_file ../bin/weights.h5
 ```
+## General Usage
+
+Converting a single image into HTML code, using weights:
+```sh
+cd src
+
+python convert_single_image.py --png_path {path/to/img.png} \
+      --output_folder {folder/to/output/html} \
+      --model_json_file {path/to/model/json_file.json} \
+      --model_weights_file {path/to/model/weights.h5}
+```
+
+Converting a batch of images in a folder to HTML:
+```sh
+cd src
+
+python convert_batch_of_images.py --pngs_path {path/to/folder/with/pngs} \
+      --output_folder {folder/to/output/html} \
+      --model_json_file {path/to/model/json_file.json} \
+      --model_weights_file {path/to/model/weights.h5}
+```
