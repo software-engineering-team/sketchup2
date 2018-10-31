@@ -41,3 +41,9 @@ test_counter = 0
 for image, tagcode in read_from_gnt_dir(gnt_dir=test_data_dir):
     tagcode_unicode = struct.pack('>H', tagcode).decode('gb2312')
     im = Image.fromarray(image)
+    
+        dir_name = '../data/test/' + '%0.5d'%char_dict[tagcode_unicode]
+    if not os.path.exists(dir_name):
+        os.mkdir(dir_name)
+    im.convert('RGB').save(dir_name+'/' + str(test_counter) + '.png')
+    test_counter += 1
