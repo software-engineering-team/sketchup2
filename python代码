@@ -38,3 +38,6 @@ pickle.dump(char_dict, f)
 f.close()
 train_counter = 0
 test_counter = 0
+for image, tagcode in read_from_gnt_dir(gnt_dir=test_data_dir):
+    tagcode_unicode = struct.pack('>H', tagcode).decode('gb2312')
+    im = Image.fromarray(image)
