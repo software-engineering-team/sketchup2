@@ -2,3 +2,7 @@ import os
 import numpy as np
 import struct
 from PIL import Image
+data_dir = '../data'
+train_data_dir = os.path.join(data_dir, 'HWDB1.1trn_gnt')
+test_data_dir = os.path.join(data_dir, 'HWDB1.1tst_gnt')
+ 
