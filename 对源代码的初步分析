@@ -1,5 +1,5 @@
-由于无法对汉字进行识别，我对源代码进行了初步的分析：
-这个程序用了机器学习的一些方法，我对其中一个图片的标签进行了分析。
+//由于无法对汉字进行识别，我对源代码进行了初步的分析：
+//这个程序用了机器学习的一些方法，我对其中一个图片的标签进行了分析。
  {
     "id": "2469da39-65f0-428b-a1de-cedbba7db32e",
     "created": "2018-07-11T07:27:39.1873304Z",
@@ -7,9 +7,9 @@
     "height": 564,
     "imageUri": null,
     "thumbnailUri": null,
-可以看到，这几行程序仅仅涉及对退    "width"，"height"，"imageUri":，"thumbnailUri"进行了标注，不涉及对任何文字的处理。
+//可以看到，这几行程序仅仅涉及对退    "width"，"height"，"imageUri":，"thumbnailUri"进行了标注，不涉及对任何文字的处理。
  
- 然后对接下来的"tag"进行处理。发现在"tagName"这里面"RadioButton"，"Button"，"TextBox"，"CheckBox" 这些feature.
+ //然后对接下来的"tag"进行处理。发现在"tagName"这里面"RadioButton"，"Button"，"TextBox"，"CheckBox" 这些feature.
  
    
    
