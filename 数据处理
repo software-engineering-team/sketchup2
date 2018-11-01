@@ -39,7 +39,7 @@
 * 		  import pickle 
 * 		  f = open('char_dict', 'wb') 
 * 		  pickle.dump(char_dict, f) 
-* 		  f.close() 
+* 		  f.close() //
 * 		  train_counter = 0 
 * 		  test_counter = 0 
 * 		  for image, tagcode in read_from_gnt_dir(gnt_dir=train_data_dir): 
