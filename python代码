@@ -54,7 +54,7 @@ for image, tagcode in read_from_gnt_dir(gnt_dir=test_data_dir):
     print 'tag2 {0}'.format(len(image_list))
     images_tensor = tf.convert_to_tensor(image_list, dtype=tf.string)
     labels_tensor = tf.convert_to_tensor(label_list, dtype=tf.int64)
-    input_queue = tf.train.slice_input_producer([images_tensor, labels_tensor])
+    input_queue = tf.train.slice_input_producer([images_tensor, labels_tensor])//
     def pre_process(images):
         if FLAGS.random_flip_up_down:
             images = tf.image.random_flip_up_down(images)
