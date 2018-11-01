@@ -65,10 +65,10 @@ A new folder is created for each generation process with the following contents:
 -	groups.json: results from the layout algorithm containing the spatial distribution of predicted objects.
 ### Azure Blob存储
 Azure Blob存储用于存储该进程的所有中间步骤。
-将为每个生成过程创建一个新文件夹，其中包含以下内容：
-- \ slices：包含用于文本预测的裁剪图像。
-- Original.png：用户上传的图片。
-- results.json：预测过程的结果针对原始图像运行。
+将为每个生成过程创建一个新文件夹，文件夹中包含以下内容：
+- Slices：包含用于文本预测的裁剪图像。
+- Original.png：用户所上传的图片。
+- results.json：针对原始图像运行的预测过程的结果。
 - groups.json：包含预测对象的空间分布的布局算法的结果。
 
 ### Azure function
@@ -83,12 +83,12 @@ The code for the provided Azure Function is located in the Sketch2Code.Api folde
 -	ObjectDetectionTrainingKey: Training key for the custom vision service.
 -	Probability: Probability threshold to consider a successful object detection. Below this value predictions are not considered. Sample model works with 40. 
 ### Azure功能
-提供的Azure功能的代码位于Sketch2Code.Api文件夹中。您可以使用此代码创建自己的函数，并且必须定义以下配置参数：
+提供的Azure功能的代码位于Sketch2Code.Api文件夹中，可以使用此代码创建属于自己的函数，但必须定义以下配置参数：
 - AzureWebJobsStorage：Azure存储的端点。
-- ComputerVisionDelay：在呼叫计算机视觉服务之间等待的时间（以毫秒为单位）。样本工作120ms。
+- ComputerVisionDelay：在调用计算机视觉服务之间等待的时间（以毫秒为单位），样本工作的时间为120ms。
 - HandwrittenTextApiEndpoint：计算机视觉服务的端点。
-- HandwrittenTextSubscriptionKey：访问计算机视觉服务的密钥。
-- ObjectDetectionIterationName：要在预测模型中使用的训练迭代的名称。
+- HandwrittenTextSubscriptionKey：访问计算机视觉服务所用的密钥。
+- ObjectDetectionIterationName：要在预测模型中使用的迭代训练的名称。
 - ObjectDetectionPredictionKey：用于访问自定义视觉服务的预测键。
 - ObjectDetectionProjectName：自定义视觉项目的名称。
 - ObjectDetectionTrainingKey：自定义视觉服务的培训密钥。
