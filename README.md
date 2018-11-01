@@ -13,3 +13,6 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
+该项目采用了[Microsoft开源行为准则]（https://opensource.microsoft.com/codeofconduct/）。
+有关详细信息，请参阅[行为准则常见问题]（https://opensource.microsoft.com/codeofconduct/faq/）或
+如有任何其他问题或意见，请联系[opencode@microsoft.com]（mailto：opencode@microsoft.com）。
