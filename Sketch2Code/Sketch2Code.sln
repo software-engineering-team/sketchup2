@@ -110,7 +110,7 @@ Global
 		{8B3B8AEF-9EA1-4EC1-AD22-91DBC073D2E7}.Release|x86.ActiveCfg = Release|Any CPU
 		{8B3B8AEF-9EA1-4EC1-AD22-91DBC073D2E7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
+	GlobalSection(SolutionProperties) = preSolution//
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
