@@ -51,7 +51,7 @@ namespace Sketch2Code.AI
                     while (result.Status != Microsoft.ProjectOxford.Vision.Contract.HandwritingRecognitionOperationStatus.Succeeded)
                     {
                         if (result.Status == Microsoft.ProjectOxford.Vision.Contract.HandwritingRecognitionOperationStatus.Failed)
-                            return new List<string>(new string[] { "Text prediction failed" });
+                            return new List<string>(new string[] { "Text prediction failed" });//
 
                         await Task.Delay(Convert.ToInt32(ConfigurationManager.AppSettings["ComputerVisionDelay"]));
 
