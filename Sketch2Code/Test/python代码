@@ -1,0 +1,73 @@
+import os
+import numpy as np
+import struct
+from PIL import Image
+data_dir = '../data'
+train_data_dir = os.path.join(data_dir, 'HWDB1.1trn_gnt')
+test_data_dir = os.path.join(data_dir, 'HWDB1.1tst_gnt')
+ def read_from_gnt_dir(gnt_dir=train_data_dir):
+    def one_file(f):
+        header_size = 10
+        while True:
+            header = np.fromfile(f, dtype='uint8', count=header_size)
+            if not header.size: break
+            sample_size = header[0] + (header[1]<<8) + (header[2]<<16) + (header[3]<<24)
+            tagcode = header[5] + (header[4]<<8)
+            width = header[6] + (header[7]<<8)
+            height = header[8] + (header[9]<<8)
+            if header_size + width*height != sample_size:
+                break
+            image = np.fromfile(f, dtype='uint8', count=width*height).reshape((height, width))
+            yield image, tagcode
+    for file_name in os.listdir(gnt_dir):
+        if file_name.endswith('.gnt'):
+            file_path = os.path.join(gnt_dir, file_name)
+            with open(file_path, 'rb') as f:
+                for image, tagcode in one_file(f):
+                    yield image, tagcode
+char_set = set()
+for _, tagcode in read_from_gnt_dir(gnt_dir=train_data_dir):
+    tagcode_unicode = struct.pack('>H', tagcode).decode('gb2312')
+    char_set.add(tagcode_unicode)
+char_list = list(char_set)
+char_dict = dict(zip(sorted(char_list), range(len(char_list))))
+print len(char_dict)
+import pickle
+f = open('char_dict', 'wb')
+pickle.dump(char_dict, f)
+f.close()
+train_counter = 0
+test_counter = 0
+for image, tagcode in read_from_gnt_dir(gnt_dir=test_data_dir):
+    tagcode_unicode = struct.pack('>H', tagcode).decode('gb2312')
+    im = Image.fromarray(image)
+    
+        dir_name = '../data/test/' + '%0.5d'%char_dict[tagcode_unicode]
+    if not os.path.exists(dir_name):
+        os.mkdir(dir_name)
+    im.convert('RGB').save(dir_name+'/' + str(test_counter) + '.png')
+    test_counter += 1
+    
+    def batch_data(file_labels,sess, batch_size=128):
+    image_list = [file_label[0] for file_label in file_labels]
+    label_list = [int(file_label[1]) for file_label in file_labels]
+    print 'tag2 {0}'.format(len(image_list))
+    images_tensor = tf.convert_to_tensor(image_list, dtype=tf.string)
+    labels_tensor = tf.convert_to_tensor(label_list, dtype=tf.int64)
+    input_queue = tf.train.slice_input_producer([images_tensor, labels_tensor])
+    def pre_process(images):
+        if FLAGS.random_flip_up_down:
+            images = tf.image.random_flip_up_down(images)
+        if FLAGS.random_flip_left_right:
+    def pre_process(images):
+        if FLAGS.random_flip_up_down:
+            images = tf.image.random_flip_up_down(images)
+        if FLAGS.random_flip_left_right:
+            images = tf.image.random_flip_left_right(images)
+        if FLAGS.random_brightness:
+            images = tf.image.random_brightness(images, max_delta=0.3)
+        if FLAGS.random_contrast:
+            images = tf.image.random_contrast(images, 0.8, 1.2)
+        new_size = tf.constant([FLAGS.image_size,FLAGS.image_size], dtype=tf.int32)
+        images = tf.image.resize_images(images, new_size)
+        return images
