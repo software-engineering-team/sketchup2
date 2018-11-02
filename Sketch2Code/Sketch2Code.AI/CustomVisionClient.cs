@@ -69,7 +69,7 @@ namespace Sketch2Code.AI
 
         public virtual async Task SetDefaultIterationAsync(string iterationName)
         {
-            if (_project == null) throw new InvalidOperationException("Project is null");
+            if (_project == null) throw new InvalidOperationException("Project is null");//
 
             var iterations = await this._trainingApi.GetIterationsAsync(_project.Id);    //同步锁
 
