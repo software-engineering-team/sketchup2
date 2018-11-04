@@ -129,3 +129,7 @@ Copyright (c) 2018 Ashwin Kumar<ash.nkumar@gmail.com@gmail.com>
 > THE SOFTWARE.
 软件工程总结
 1 统计项目的代码 .cs .html .xml 3054 3020 615
+2 质疑：网站只是静态页面不涉及数据交互，目的是让不懂代码的人也能通过软件生成代码
+但是前端的需求复杂，例如网页一个button 实现弹出的效果，滚动栏的实现。
+归结于，图片是静止的，一些效果通过gif实现。
+通过拖拽来生成代码gospel，
