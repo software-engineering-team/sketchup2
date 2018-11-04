@@ -63,7 +63,7 @@ A new folder is created for each generation process with the following contents:
 -	Original.png: image uploaded by the user.
 -	results.json: results from the prediction process run against the original image.
 -	groups.json: results from the layout algorithm containing the spatial distribution of predicted objects.
-### Azure Blob存储
+### Azure Blob 存储
 Azure Blob存储用于存储该进程的所有中间步骤。
 将为每个生成过程创建一个新文件夹，文件夹中包含以下内容：
 - Slices：包含用于文本预测的裁剪图像。
